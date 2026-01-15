@@ -1,0 +1,161 @@
+var Q = {
+    registerImage: function(iconObj) {
+        var canvas = document.getElementById('myCanvas');
+        // Ensure canvas exists before context
+        if (canvas) {
+            var ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            iconObj.draw(ctx);
+        }
+    }
+};
+
+var SVGIcons = {
+    "logo.svg": {
+        draw: function(ctx) {
+            ctx.save();
+            ctx.scale(0.1, 0.1); 
+            ctx.save();
+            ctx.fillStyle = "#ff4500";
+            ctx.beginPath();
+            ctx.arc(400, 400, 400, 0, Math.PI * 2, false);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+            ctx.save();
+            ctx.fillStyle = "#fff";
+            ctx.beginPath();
+            ctx.moveTo(667, 400);
+            ctx.bezierCurveTo(667, 405, 666, 411, 665, 416);
+            ctx.bezierCurveTo(663, 422, 661, 427, 658, 431);
+            ctx.bezierCurveTo(655, 436, 652, 440, 648, 444);
+            ctx.bezierCurveTo(644, 448, 639, 451, 634, 453);
+            ctx.bezierCurveTo(635, 455, 635, 456, 635, 458);
+            ctx.translate(527, 462);
+            ctx.arc(0, 0, 107, -0.04, 0.04, 0);
+            ctx.translate(-527, -462);
+            ctx.bezierCurveTo(635, 468, 635, 469, 634, 471);
+            ctx.bezierCurveTo(634, 560, 530, 633, 401, 633);
+            ctx.bezierCurveTo(272, 633, 168, 560, 168, 471);
+            ctx.bezierCurveTo(168, 469, 168, 468, 168, 466);         
+            ctx.translate(275, 462);
+            ctx.arc(0, 0, 107, 3.1, 3.18, 0);
+            ctx.translate(-275, -462);
+            ctx.bezierCurveTo(168, 456, 168, 455, 168, 453);
+            ctx.translate(192, 400);
+            ctx.arc(0, 0, 58, 2.0, 2.87, 0);
+            ctx.translate(-192, -400);
+            ctx.translate(192, 400);
+            ctx.arc(0, 0, 58, 2.87, 3.73, 0);
+            ctx.translate(-192, -400);
+            ctx.translate(192, 400);
+            ctx.arc(0, 0, 58, -2.55, -1.68, 0);
+            ctx.translate(-192, -400);
+            ctx.translate(192, 400);
+            ctx.arc(0, 0, 58, -1.68, -0.82, 0);
+            ctx.translate(-192, -400);
+            ctx.translate(393, 595);
+            ctx.arc(0, 0, 287, -2.17, -2.02, 0);
+            ctx.translate(-393, -595);
+            ctx.bezierCurveTo(281, 331, 294, 326, 307, 322);
+            ctx.bezierCurveTo(320, 317, 333, 314, 347, 312);
+            ctx.bezierCurveTo(361, 310, 375, 309, 388, 308);
+            ctx.lineTo(418, 170);
+            ctx.bezierCurveTo(418, 168, 419, 166, 420, 165);
+            ctx.bezierCurveTo(421, 164, 422, 163, 423, 162);
+            ctx.bezierCurveTo(425, 161, 426, 160, 428, 160);
+            ctx.bezierCurveTo(430, 160, 431, 160, 433, 160);
+            ctx.lineTo(531, 180);
+            ctx.bezierCurveTo(541, 163, 561, 155, 580, 162);
+            ctx.bezierCurveTo(598, 169, 609, 189, 604, 208);
+            ctx.bezierCurveTo(600, 227, 583, 241, 563, 240);
+            ctx.bezierCurveTo(544, 239, 528, 224, 526, 204);
+            ctx.lineTo(440, 186);
+            ctx.lineTo(414, 311);
+            ctx.bezierCurveTo(428, 311, 441, 312, 455, 315);
+            ctx.translate(408, 595);
+            ctx.arc(0, 0, 284, -1.41, -1.12, 0);
+            ctx.translate(-408, -595);
+            ctx.translate(408, 595);
+            ctx.arc(0, 0, 284, -1.12, -0.97, 0);
+            ctx.translate(-408, -595);
+            ctx.translate(608, 402);
+            ctx.arc(0, 0, 58, -2.34, -1.76, 0);
+            ctx.translate(-608, -402);
+            ctx.translate(608, 402);
+            ctx.arc(0, 0, 58, -1.76, -1.19, 0);
+            ctx.translate(-608, -402);
+            ctx.translate(608, 402);
+            ctx.arc(0, 0, 58, -1.19, -0.61, 0);
+            ctx.translate(-608, -402);
+            ctx.translate(608, 402);
+            ctx.arc(0, 0, 58, -0.61, -0.04, 0);
+            ctx.translate(-608, -402);
+            ctx.closePath();
+            ctx.moveTo(270, 455);
+            ctx.bezierCurveTo(272, 460, 275, 465, 279, 468);
+            ctx.bezierCurveTo(282, 472, 287, 475, 291, 477);
+            ctx.translate(307, 440);
+            ctx.arc(0, 0, 40, 1.96, 1.57, 1);
+            ctx.translate(-307, -440);
+            ctx.bezierCurveTo(323, 480, 338, 470, 344, 455);
+            ctx.bezierCurveTo(350, 440, 347, 423, 335, 412);
+            ctx.bezierCurveTo(324, 400, 306, 397, 291, 403);
+            ctx.bezierCurveTo(277, 409, 267, 424, 267, 440);
+            ctx.bezierCurveTo(267, 445, 268, 450, 270, 455);
+            ctx.closePath();
+            ctx.moveTo(499, 551);
+            ctx.bezierCurveTo(501, 549, 502, 547, 502, 544);
+            ctx.bezierCurveTo(502, 541, 501, 538, 499, 536);
+            ctx.bezierCurveTo(497, 534, 494, 533, 492, 533);
+            ctx.bezierCurveTo(489, 533, 486, 534, 484, 536);
+            ctx.translate(407, 429);
+            ctx.arc(0, 0, 131, 0.95, 1.12, 0);
+            ctx.translate(-407, -429);
+            ctx.translate(407, 429);
+            ctx.arc(0, 0, 132, 1.12, 1.29, 0);
+            ctx.translate(-407, -429);
+            ctx.bezierCurveTo(437, 557, 430, 558, 422, 559);
+            ctx.bezierCurveTo(415, 560, 407, 560, 400, 560);
+            ctx.bezierCurveTo(393, 560, 385, 560, 378, 559);
+            ctx.translate(394, 431);
+            ctx.arc(0, 0, 129, 1.69, 1.87, 0);
+            ctx.translate(-394, -431);
+            ctx.bezierCurveTo(349, 552, 342, 550, 336, 546);
+            ctx.bezierCurveTo(329, 543, 323, 539, 317, 535);
+            ctx.bezierCurveTo(315, 533, 312, 532, 309, 532);
+            ctx.bezierCurveTo(307, 532, 304, 534, 302, 536);
+            ctx.bezierCurveTo(300, 537, 299, 540, 299, 543);
+            ctx.bezierCurveTo(299, 545, 300, 548, 302, 550);
+            ctx.bezierCurveTo(309, 555, 316, 560, 324, 564);
+            ctx.bezierCurveTo(332, 568, 340, 571, 348, 574);
+            ctx.bezierCurveTo(357, 577, 365, 578, 374, 580);
+            ctx.bezierCurveTo(383, 581, 392, 581, 400, 581);
+            ctx.bezierCurveTo(409, 581, 418, 581, 427, 580);
+            ctx.translate(407, 427);
+            ctx.arc(0, 0, 154, 1.44, 1.10, 1);
+            ctx.translate(-407, -427);
+            ctx.bezierCurveTo(485, 560, 492, 555, 499, 550);
+            ctx.closePath();
+            ctx.moveTo(492, 483);
+            ctx.bezierCurveTo(497, 483, 502, 482, 507, 480);
+            ctx.bezierCurveTo(512, 478, 517, 475, 521, 471);
+            ctx.bezierCurveTo(525, 467, 527, 463, 529, 457);
+            ctx.translate(492, 443);
+            ctx.arc(0, 0, 40, 0.37, -0.04, 1);
+            ctx.translate(-492, -443);
+            ctx.bezierCurveTo(532, 425, 522, 411, 507, 405);
+            ctx.bezierCurveTo(492, 398, 475, 402, 464, 413);
+            ctx.bezierCurveTo(452, 425, 449, 442, 455, 457);
+            ctx.bezierCurveTo(461, 472, 476, 482, 492, 482);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+            ctx.restore();
+        }
+    }
+};
+
+for (var name in SVGIcons) {
+    Q.registerImage(SVGIcons[name]);
+}
