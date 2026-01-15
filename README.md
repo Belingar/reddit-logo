@@ -1,79 +1,78 @@
-# Reddit Clone — Logo with Canvas & SVG
+# Reddit Clone — Logo z uporabo Canvas in SVG
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Licenca: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A Reddit‑inspired UI project showcasing two methods for rendering a logo: **Canvas** and **SVG**.  
-This repository demonstrates how to implement the Reddit logo dynamically with HTML5 `<canvas>` and statically with inline `<svg>`, while maintaining responsiveness and layout integrity.
+Projekt, navdihnjen z Redditom, ki prikazuje dve metodi za risanje logotipa: **Canvas** in **SVG**.  
+To skladišče prikazuje, kako implementirati Redditov logotip dinamično z uporabo HTML5 `<canvas>` in statično z vgrajenim `<svg>`, ob ohranjanju odzivnosti in celovitosti postavitve.
 
 ---
 
-## 📌 Table of Contents
+## 📌 Kazalo vsebine
 
-- [Demo](#demo)  
-- [Features](#features)  
-- [Getting Started](#getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-- [Usage](#usage)  
-  - [Canvas Logo](#canvas-logo)  
-  - [SVG Logo](#svg-logo)  
-- [File Structure](#file-structure)  
-- [Customization](#customization)  
-- [Contributing](#contributing)  
-- [License](#license)  
+index.html
+css/
+  -style.css
+  -logo.svg
+images/
+  -reddit-logo.png
+javascript/
+  -reddit-logo.js
+  -logo.svg
+  -script.js
+
 
 ---
 
 ## 📸 Demo
 
-> A Reddit‑like header UI with logo rendering options.
+> Reddit podobna postavitev glave z možnostmi za risanje logotipa.
 
-*Canvas rendering: dynamic and script‑driven*  
-*SVG rendering: scalable, accessible and CSS‑friendly*
-
----
-
-## 🚀 Features
-
-- 🔹 **Canvas Logo:** Drawn using JavaScript on an HTML5 `<canvas>`  
-- 🔹 **SVG Logo:** Inline `<svg>` for crisp rendering and easy styling  
-- 🔹 Responsive header layout  
-- 🔹 Clean HTML/CSS/JS structure  
-- 🔹 Easily extensible UI scaffold  
+*Canvas risanje: dinamično in s pomočjo skripte*  
+*SVG risanje: odzivno, dostopno in enostavno za stilizacijo s CSS*
 
 ---
 
-## 🛠️ Getting Started
+## 🚀 Značilnosti
 
-Follow these steps to run the project locally.
+- 🔹 **Canvas Logotip:** Narisano z uporabo JavaScripta na HTML5 `<canvas>`  
+- 🔹 **SVG Logotip:** Vgrajen `<svg>` za oster prikaz in enostavno stilizacijo  
+- 🔹 Odzivna postavitev glave  
+- 🔹 Čista struktura HTML/CSS/JS  
+- 🔹 Enostavno širljiv UI okostje  
 
-### 📋 Prerequisites
+---
 
-Make sure you have a modern web browser:
+## 🛠️ Začetek
+
+Sledite tem korakom, da zaženete projekt lokalno.
+
+### 📋 Pogoji
+
+Poskrbite, da imate sodoben spletni brskalnik:
 - Chrome, Firefox, Safari, Edge
 
-⚠️ No additional libraries or build tools required.
+⚠️ Ni potrebno nameščati dodatnih knjižnic ali gradbenih orodij.
 
 ---
 
-### ⬇️ Installation
+### ⬇️ Namestitev
 
-1. Clone the repository:
+1. Klonirajte skladišče:
     ```bash
     git clone https://github.com/your-username/reddit-clone.git
     ```
 
-2. Navigate to the project folder:
+2. Pojdite v mapo projekta:
     ```bash
     cd reddit-clone
     ```
 
-3. Open `index.html` in your browser:
+3. Odprite `index.html` v vašem brskalniku:
     ```bash
     open index.html
     ```
 
-OR serve it with a local server if you prefer:
+ALI uporabite lokalni strežnik, če želite:
 ```bash
 npm install -g http-server
 http-server .
