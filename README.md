@@ -9,13 +9,13 @@ To skladišče prikazuje, kako implementirati Redditov logotip dinamično z upor
 
 ## 📌 Kazalo vsebine
 
-index.html
-css/
+- index.html
+- css/
   -style.css
   -logo.svg
-images/
+- images/
   -reddit-logo.png
-javascript/
+- javascript/
   -reddit-logo.js
   -logo.svg
   -script.js
