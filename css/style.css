@@ -1,4 +1,5 @@
-
+/* Reddit Clone - Dark Theme */
+/* Color Palette */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
+/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -35,6 +36,12 @@ body {
   gap: 8px;
 }
 
+#myCanvas {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: block;
+}
 .menu-btn {
   background: transparent;
   border: none;
@@ -51,17 +58,7 @@ body {
   background-color: #2a2a2b;
   color: #f2f2f2;
 }
-#myCanvas {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  display: block;
-}
-.reddit-logo {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-}
+
 .logo {
   display: flex;
   align-items: center;
@@ -70,7 +67,6 @@ body {
   font-weight: 700;
   color: #ff4500;
   text-decoration: none;
-  height: 100%;
 }
 
 .logo canvas {
@@ -195,10 +191,12 @@ body {
   color: white;
 }
 
+/* Layout */
 .layout {
   display: flex;
 }
 
+/* Sidebar */
 .sidebar {
   display: none;
   width: 256px;
@@ -387,6 +385,7 @@ body {
   margin-left: 4px;
 }
 
+/* Main Content */
 .main-content {
   flex: 1;
   max-width: 672px;
@@ -396,6 +395,7 @@ body {
   min-height: calc(100vh - 48px);
 }
 
+/* Feed Filter */
 .feed-filter {
   display: flex;
   align-items: center;
@@ -434,11 +434,13 @@ body {
   height: 16px;
 }
 
+/* Posts Container */
 #posts-container {
   display: flex;
   flex-direction: column;
 }
 
+/* Post Card */
 .post-card {
   padding: 12px 16px;
   border-bottom: 1px solid #343536;
@@ -551,7 +553,7 @@ body {
   color: #818384;
   margin-bottom: 12px;
   display: -webkit-box;
-  line-clamp: 3;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -674,18 +676,264 @@ body {
   height: 16px;
 }
 
-.right-spacer {
+/* News Carousel */
+.news-carousel {
+  position: relative;
+  border-bottom: 1px solid #343536;
+  background-color: #1a1a1b;
+}
+
+.news-carousel-inner {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.news-carousel-inner::-webkit-scrollbar {
   display: none;
-  width: 256px;
+}
+
+.news-card {
+  position: relative;
   flex-shrink: 0;
+  width: 208px;
+  height: 128px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.news-card:hover .news-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.6), transparent);
+}
+
+.news-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5), transparent);
+  transition: background 0.2s;
+}
+
+.news-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.news-card-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-source {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-source-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ff4500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+}
+
+.news-source-name {
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.news-source-more {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+
+.news-scroll-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(26, 26, 27, 0.9);
+  border: 1px solid #343536;
+  color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.news-scroll-btn:hover {
+  background-color: #2a2a2b;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+  display: none;
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 48px;
+  height: calc(100vh - 48px);
+  overflow-y: auto;
 }
 
 @media (min-width: 1280px) {
-  .right-spacer {
+  .right-sidebar {
     display: block;
   }
 }
 
+.right-sidebar-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.communities-card {
+  background-color: #222223;
+  border: 1px solid #343536;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.communities-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #343536;
+}
+
+.communities-header h2 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #818384;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.communities-list {
+  padding: 4px 0;
+}
+
+.community-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.community-item:hover {
+  background-color: rgba(42, 42, 43, 0.5);
+}
+
+.community-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.community-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.community-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f2f2f2;
+}
+
+.community-item-members {
+  font-size: 12px;
+  color: #818384;
+}
+
+.communities-footer {
+  padding: 8px 16px;
+  border-top: 1px solid #343536;
+}
+
+.see-more-btn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  padding: 0 8px;
+  font-size: 12px;
+  color: #818384;
+}
+
+.footer-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #818384;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

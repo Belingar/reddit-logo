@@ -1,4 +1,42 @@
-// Posts data
+// All JavaScript in one file
+
+const newsItems = [
+  {
+    title: "Tech stocks surge amid AI growth",
+    subtitle: "Markets react to new developments in artificial intelligence",
+    source: "r/technology",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80",
+  },
+  {
+    title: "Climate summit reaches agreement",
+    subtitle: "World leaders commit to carbon reduction targets",
+    source: "r/worldnews",
+    image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=400&q=80",
+  },
+  {
+    title: "New gaming console announced",
+    subtitle: "Next-gen hardware promises 8K gaming experience",
+    source: "r/gaming",
+    image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&q=80",
+  },
+  {
+    title: "Scientists make breakthrough",
+    subtitle: "Revolutionary discovery in quantum computing",
+    source: "r/science",
+    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&q=80",
+  },
+];
+
+
+const popularCommunities = [
+  { name: "r/AskMen", members: "7,143,843", icon: "👨", color: "#2563eb" },
+  { name: "r/AskWomen", members: "5,617,178", icon: "👩", color: "#ec4899" },
+  { name: "r/PS4", members: "5,514,497", icon: "🎮", color: "#1d4ed8" },
+  { name: "r/apple", members: "6,311,621", icon: "🍎", color: "#4b5563" },
+  { name: "r/NBA2k", members: "740,205", icon: "🏀", color: "#f97316" },
+];
+
+
 const posts = [
   {
     id: 1,
@@ -96,15 +134,14 @@ const posts = [
   },
 ];
 
-// Vote states for each post
+
 const voteStates = {};
 
-// Initialize vote states
 posts.forEach(post => {
   voteStates[post.id] = { state: null, currentVotes: post.upvotes };
 });
 
-// Format number (e.g., 1000 -> 1k)
+
 function formatNumber(num) {
   if (num >= 1000) {
     return (num / 1000).toFixed(1) + 'k';
@@ -112,7 +149,7 @@ function formatNumber(num) {
   return num.toString();
 }
 
-// Toggle sidebar
+
 let sidebarOpen = true;
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
@@ -124,21 +161,27 @@ function toggleSidebar() {
   }
 }
 
-// Toggle section
+
 function toggleSection(sectionId) {
   const header = document.querySelector(`[data-section="${sectionId}"]`);
   const content = document.getElementById(sectionId);
-  
+
   header.classList.toggle('collapsed');
   content.classList.toggle('hidden');
 }
 
-// Handle upvote
+
+function scrollNews() {
+  const container = document.querySelector('.news-carousel-inner');
+  container.scrollBy({ left: 220, behavior: 'smooth' });
+}
+
+
 function handleUpvote(postId, event) {
   event.stopPropagation();
   const post = posts.find(p => p.id === postId);
   const voteState = voteStates[postId];
-  
+
   if (voteState.state === 'up') {
     voteState.state = null;
     voteState.currentVotes = post.upvotes;
@@ -146,16 +189,16 @@ function handleUpvote(postId, event) {
     voteState.state = 'up';
     voteState.currentVotes = post.upvotes + 1;
   }
-  
+
   updatePostVotes(postId);
 }
 
-// Handle downvote
+
 function handleDownvote(postId, event) {
   event.stopPropagation();
   const post = posts.find(p => p.id === postId);
   const voteState = voteStates[postId];
-  
+
   if (voteState.state === 'down') {
     voteState.state = null;
     voteState.currentVotes = post.upvotes;
@@ -163,23 +206,21 @@ function handleDownvote(postId, event) {
     voteState.state = 'down';
     voteState.currentVotes = post.upvotes - 1;
   }
-  
+
   updatePostVotes(postId);
 }
 
-// Update post votes display
+
 function updatePostVotes(postId) {
   const voteState = voteStates[postId];
   const upvoteBtn = document.querySelector(`#post-${postId} .upvote-btn`);
   const downvoteBtn = document.querySelector(`#post-${postId} .downvote-btn`);
   const voteCount = document.querySelector(`#post-${postId} .vote-count`);
-  
-  // Reset classes
+
   upvoteBtn.classList.remove('upvoted');
   downvoteBtn.classList.remove('downvoted');
   voteCount.classList.remove('upvoted', 'downvoted');
-  
-  // Apply new classes
+
   if (voteState.state === 'up') {
     upvoteBtn.classList.add('upvoted');
     voteCount.classList.add('upvoted');
@@ -187,14 +228,52 @@ function updatePostVotes(postId) {
     downvoteBtn.classList.add('downvoted');
     voteCount.classList.add('downvoted');
   }
-  
+
   voteCount.textContent = formatNumber(voteState.currentVotes);
 }
 
-// Render posts
+
+function renderNews() {
+  const container = document.getElementById('news-container');
+
+  container.innerHTML = newsItems.map(news => `
+    <div class="news-card">
+      <img class="news-card-image" src="${news.image}" alt="${news.title}">
+      <div class="news-card-overlay"></div>
+      <div class="news-card-content">
+        <h3 class="news-card-title">${news.title}</h3>
+        <p class="news-card-subtitle">${news.subtitle}</p>
+        <div class="news-card-source">
+          <div class="news-source-icon">📰</div>
+          <span class="news-source-name">${news.source}</span>
+          <span class="news-source-more">and more</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+
+function renderCommunities() {
+  const container = document.getElementById('communities-list');
+
+  container.innerHTML = popularCommunities.map(community => `
+    <div class="community-item">
+      <div class="community-item-icon" style="background-color: ${community.color}">
+        ${community.icon}
+      </div>
+      <div class="community-item-info">
+        <p class="community-item-name">${community.name}</p>
+        <p class="community-item-members">${community.members} members</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+
 function renderPosts() {
   const container = document.getElementById('posts-container');
-  
+
   container.innerHTML = posts.map(post => `
     <article class="post-card" id="post-${post.id}">
       <div class="post-header">
@@ -261,8 +340,9 @@ function renderPosts() {
   `).join('');
 }
 
-// Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
+  renderNews();
+  renderCommunities();
   renderPosts();
   drawRedditLogo();
 });
