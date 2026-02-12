@@ -44,10 +44,10 @@ Logotip je izdelan na dva različna načina:
 
 ## Tehnologije
 🔹HTML5
-  -<canvas>
-  -<svg>
+  - <canvas>
+  - <svg>
 🔹JavaScript
-  -bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+  - bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 
 ## 🛠️ Začetek
 
