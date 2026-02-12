@@ -84,3 +84,7 @@ ALI uporabite lokalni strežnik, če želite:
 ```bash
 npm install -g http-server
 http-server .
+
+---
+
+Avtor: Urh Belingar
