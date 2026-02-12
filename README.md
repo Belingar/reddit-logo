@@ -34,11 +34,11 @@ To skladišče prikazuje, kako implementirati Redditov logotip dinamično z upor
 
 ## 🚀 Značilnosti
 
-- 🔹 **Canvas Logotip:** Narisano z uporabo JavaScripta na HTML5 `<canvas>`  
-- 🔹 **SVG Logotip:** Vgrajen `<svg>` za oster prikaz in enostavno stilizacijo  
-- 🔹 Odzivna postavitev glave  
-- 🔹 Čista struktura HTML/CSS/JS  
-- 🔹 Enostavno širljiv UI okostje  
+🔹 **Canvas Logotip:** Narisano z uporabo JavaScripta na HTML5 `<canvas>`  
+🔹 **SVG Logotip:** Vgrajen `<svg>` za oster prikaz in enostavno stilizacijo  
+🔹 Odzivna postavitev glave  
+🔹 Čista struktura HTML/CSS/JS  
+🔹 Enostavno širljiv UI okostje  
 
 ---
 
