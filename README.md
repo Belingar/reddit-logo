@@ -34,13 +34,20 @@ To skladišče prikazuje, kako implementirati Redditov logotip dinamično z upor
 
 ## 🚀 Značilnosti
 
-🔹 **Canvas Logotip:** Narisano z uporabo JavaScripta na HTML5 `<canvas>`  
-🔹 **SVG Logotip:** Vgrajen `<svg>` za oster prikaz in enostavno stilizacijo  
-🔹 Odzivna postavitev glave  
-🔹 Čista struktura HTML/CSS/JS  
-🔹 Enostavno širljiv UI okostje  
+Projekt prikazuje izris Reddit z uporabo Bezierjevih krivulj v jeziku HTML5.
+Logotip je izdelan na dva različna načina:
+
+🔹z uporabo HTML5 Canvas API-ja in funkcije bezierCurveTo()
+🔹z uporabo SVG grafike (<svg> in <path>)
 
 ---
+
+## Tehnologije
+🔹HTML5
+  -<canvas>
+  -<svg>
+🔹JavaScript
+  -bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 
 ## 🛠️ Začetek
 
